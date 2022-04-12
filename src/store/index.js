@@ -4,6 +4,9 @@ import logger from 'redux-logger';
 import axios from 'axios';
 
 const notes = (state = [], action)=> {
+  if(action.type === 'SET_NOTES'){
+    return action.notes;
+  }
   return state;
 };
 

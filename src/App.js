@@ -12,6 +12,11 @@ class App extends React.Component{
   componentDidMount(){
     this.props.attemptLogin();
   }
+  componentDidUpdate(prevProps){
+    if(prevProps.auth !== this.props.auth){
+
+    }
+  }
   render(){
     const { auth } = this.props;
     console.log(auth);
