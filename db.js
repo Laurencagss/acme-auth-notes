@@ -18,9 +18,6 @@ const User = conn.define('user', {
 
 const Note = conn.define('note', {
   text: STRING,
-  userId: {
-    type: INTEGER,
-  }
 });
 
 Note.belongsTo(User);
@@ -85,6 +82,7 @@ const syncAndSeed = async()=> {
     { text: 'buy heels from Zara', userId: larry.id},
     { text: 'do makeup for event', userId: lucy.id},
   ];
+  
   await Promise.all(notes.map( note => Note.create(note)));
   return {
     users: {
